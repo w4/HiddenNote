@@ -1,0 +1,16 @@
+{% extends "template.html" %}
+
+{% block header %}
+    <header class="homepage">
+        {% include "homepage_header.html" %}
+    </header>
+{% endblock %}
+
+{% block content %}
+    <div class="row columns">
+        Successfully uploaded your note. The first person to visit the below link will be
+        the last person to see it.
+
+        <input type="url" disabled value="{{ request.url_root }}view/{{ id }}#{{ key }}">
+    </div>
+{% endblock %}

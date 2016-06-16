@@ -1,0 +1,8 @@
+{
+  "redis": {
+    "host": "127.0.0.1",
+    "port": 6379,
+    "db": 0
+  },
+  "secret_key": "HIDDEN_KEY_HERE_MAKE_IT_AS_LONG_AS_YOU_WANT"
+}

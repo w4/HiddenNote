@@ -1,0 +1,36 @@
+{% extends "template.html" %}
+
+{% block header %}
+    <header class="homepage">
+        {% include "homepage_header.html" %}
+    </header>
+{% endblock %}
+
+{% block content %}
+    <form action="/submit/nojs" method="post" id="post_form">
+        <div class="row">
+            <textarea placeholder="Write your note here" rows="5" name="content"
+                      required></textarea>
+        </div>
+
+        <div class="row captcha">
+            <div class="small-6 large-2 columns">
+                <img src="data:image/png;base64,{{ captcha }}">
+            </div>
+
+            <div class="small-6 large-6 columns">
+                <input name="captcha" type="text" minlength="5" maxlength="5"
+                       pattern="^[a-zA-Z]+$" title="Captcha" placeholder="Captcha"
+                       required>
+            </div>
+        </div>
+
+        <div class="row">
+            <p>Please note: 5 characters. English alphabet only with no numbers.</p>
+        </div>
+
+        <div class="row column">
+            <input type="submit" class="button" value="Submit">
+        </div>
+    </form>
+{% endblock %}

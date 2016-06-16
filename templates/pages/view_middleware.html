@@ -1,0 +1,18 @@
+{% extends "template.html" %}
+
+{% block content %}
+    <div class="row columns">
+        Please wait while we redirect you to the view page. If you see a red notice
+        above, you do not have JavaScript enabled, in that case please visit the URL
+        <strong>{{ request.url_root }}view/nojs/{{ id }}?key=KEYHERE</strong> to view the
+        message decrypted at the server side. You can find the key in the URL bar after
+        the #.
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    <script type="text/javascript">
+        window.location = "/view/js/{{ id }}" + window.location.hash;
+    </script>
+{% endblock %}

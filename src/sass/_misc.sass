@@ -1,0 +1,37 @@
+@include font-face("Roboto", "fonts/Roboto-Regular", $file-formats: "ttf")
+@include font-face("Roboto", "fonts/Roboto-Bold", bold, $file-formats: "ttf")
+@include font-face("Roboto Condensed", "fonts/RobotoCondensed-Regular", $file-formats: "ttf")
+@include font-face("Roboto Condensed", "fonts/RobotoCondensed-Bold", bold, $file-formats: "ttf")
+
+.callout
+  background: rgb(247, 247, 247)
+  color: rgb(51, 51, 51)
+  border: none
+  border-left: rem-calc(6px) solid rgb(0, 140, 186)
+  box-shadow: 0 rem-calc(5px 8px -6px) rgba(black, .2)
+
+  @each $key, $colour in $foundation-palette
+    &.#{$key}
+      background: rgb(247, 247, 247)
+      color: rgb(51, 51, 51)
+      border-left-color: $colour
+
+  &.small
+    padding-top: 0.25rem
+    padding-bottom: 0.25rem
+    font-size: 0.75rem
+
+    .close
+      font-size: 1.5rem
+
+  &.large
+    padding-top: 1.5rem
+    padding-bottom: 1.5rem
+    font-size: 2rem
+
+    .close
+      font-size: 3rem
+
+  .close
+    font-size: 2rem
+    line-height: 1.25rem

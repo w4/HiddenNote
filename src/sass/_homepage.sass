@@ -1,0 +1,75 @@
+header.homepage
+  background: url("img/header.jpg") 50% / cover
+  height: rem-calc(600px)
+
+  nav.top-bar
+    @include background(linear-gradient(to bottom, rgba(black, .6), transparent))
+
+    ul
+      background: none
+
+      li
+        height: rem-calc(49px)
+
+  .callout
+    @include calc(height, "100% - 4rem")
+    @include display(flex)
+    @include justify-content(center)
+    @include align-items(center)
+    background: none
+    border: none
+
+    .row
+      background: rgba(black, 0.3)
+      border-radius: rem-calc(11px)
+
+  .logo img
+    width: rem-calc(111px)
+
+  h1
+    color: white
+    font-size: 1em
+    font-weight: bold
+
+    @include breakpoint(400px up)
+      font-size: 1.5em
+
+    @include breakpoint(medium up)
+      font-size: 2.5em
+
+  p
+    color: white
+    font-size: 1.4rem
+
+  a
+    @include transition(opacity 0.1s ease-in-out)
+    color: white
+
+    &:hover
+      opacity: 0.5
+      color: white
+
+.js-warning
+  display: none
+
+  .no-js &
+    display: block
+
+.captcha
+  input
+    margin: 0
+
+  > div
+    display: flex
+    align-items: center
+
+#post_form
+  textarea, input[type="text"]
+    border: none
+    border-bottom: 1px solid rgb(221, 221, 221)
+    box-shadow: none
+
+    &:focus
+      border: none
+      border-bottom: 1px solid rgb(33, 150, 243)
+      box-shadow: none

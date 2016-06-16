@@ -1,0 +1,14 @@
+{% extends "template.html" %}
+
+{% block content %}
+    <div class="row columns">
+        <h3>You are now viewing note {{ id }}.</h3>
+        <p>This message has now been deleted from our servers, the only copy is
+            currently in your browser. If you need to keep this note for later, copy
+            it somewhere safe before closing this window.</p>
+    </div>
+
+    <div class="row columns">
+        <textarea disabled id="encrypted_data">{{ ciphertext.decode('ascii') }}</textarea>
+    </div>
+{% endblock %}

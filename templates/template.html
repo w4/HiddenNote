@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    {% block head %}
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>HiddenNote: Self-destructing Notes</title>
+        <link rel="stylesheet" href="/static/main.css">
+    {% endblock %}
+</head>
+
+<body>
+    {% block header %}
+        <header>
+            {% include "header.html" %}
+        </header>
+    {% endblock %}
+
+    <main>
+        <div class="row">
+            <div class="js-warning callout alert">
+                <h5>Browser-side encryption disabled</h5>
+
+                <p>Hey, we've noticed you have JavaScript disabled. Because of this we
+                    have had to browser-side encryption, this means that your message
+                    could possibly be compromised at the network layer. We'd like to
+                    prevent this from happening, please <strong>enable
+                        JavaScript</strong> if you'd like browser-side encryption.</p>
+
+                <p><strong>Please note:</strong> this does not mean encryption is
+                    completely disabled. Your message is encrypted at our server, the
+                    encryption keys are sent back to you and are not stored.</p>
+            </div>
+        </div>
+
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        {% include "footer.html" %}
+    </footer>
+
+    {% block scripts %}
+        <script src="/static/app.js"></script>
+    {% endblock %}
+</body>
+</html>
