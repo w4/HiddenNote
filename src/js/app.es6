@@ -79,7 +79,7 @@ if (textbox.length) {
     const text = decrypted.toString(UTF8);
 
     if (text == "") {
-        textbox.text("Decryption failed. Do you have the write key? Ensure you pasted" +
+        textbox.text("Decryption failed. Do you have the right key? Ensure you pasted" +
             " the URL correctly including everything after the #. This paste has now" +
             " been destroyed.");
     } else {
